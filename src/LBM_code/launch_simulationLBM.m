@@ -21,7 +21,8 @@ poro= 0.9 ;
 mean_fiber_d= 12.5 ; % in microns
 std_d= 2.85 ; % in microns
 dx= 2e-6 ; % grid size in m
-filename= 'fiber_mat.tiff' ;
+results_folder = "../../results" ;
+filename = join([results_folder,"/fiber_mat_dx",num2str(dx),".tiff"],"") ;
 
 % generation of the fiber structure
 [d_equivalent]=Generate_sample(seed,filename,mean_fiber_d,std_d,poro,NX,dx);
