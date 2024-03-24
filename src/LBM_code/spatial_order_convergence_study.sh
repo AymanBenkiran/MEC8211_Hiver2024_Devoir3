@@ -27,8 +27,9 @@ DATA_FOLDER="../../data/spatial_order_convergence_study"
 DATA_FILE="$DATA_FOLDER/spatial_order_convergence_study.csv"
 
 # dx and NX values
-CURRENT_DX=0.000016000
-CURRENT_NX=12.5
+MULTIPLIERS=(1 1.5 2 2.5 3 4 6 8)
+INITIAL_DX=0.000004000
+INITIAL_NX=50
 
 echo "*****************************************************"
 echo "*****************************************************"
@@ -51,14 +52,14 @@ else
 fi
 
 # Write header in data file
-echo "dx, imposed_poro, k_in_micron2, effective_poro" > $DATA_FILE
+echo "dx, NX, imposed_poro, k_in_micron2, effective_poro" > $DATA_FILE
 echo "*****************************************************"
 
-for i in {1..4}
+for MULT in "${MULTIPLIERS[@]}"
 do
-  # Compute current dx value
-  CURRENT_DX=$(echo "$CURRENT_DX*0.5" | bc)
-  CURRENT_NX=$(echo "$CURRENT_NX*2" | bc)
+  # Compute current dx and NX values
+  CURRENT_DX=$(echo "scale=10; $INITIAL_DX/$MULT" | bc)
+  CURRENT_NX=$(echo "$INITIAL_NX*$MULT" | bc)
   echo " Running simulation for:"
   echo "  dx = $CURRENT_DX m"
   echo "  Nx = $CURRENT_NX"

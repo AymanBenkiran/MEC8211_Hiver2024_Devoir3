@@ -17,11 +17,11 @@
 function launch_simulationLBM(results_folder, data_file)
     seed=101;
     deltaP= 0.1 ; % pressure drop in Pa
-    NX= 200.0;
+    NX= 400;
     poro= 0.9 ;
     mean_fiber_d= 12.5 ; % in microns
     std_d= 2.85 ; % in microns
-    dx= .000001000  ; % grid size in m
+    dx= .0000005000  ; % grid size in m
     results_filename = join([results_folder,"/fiber_mat_dx",num2str(dx),"_poro", num2str(poro),".tiff"],"") ;
 
     % generation of the fiber structure

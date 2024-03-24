@@ -61,7 +61,7 @@ saveas(gcf,figure_name); % save plot as png file
 
 % Write data in data_file
 % Data to be added
-newData = [dx, poro, k_in_micron2, poro_eff];
+newData = [dx, NX, poro, k_in_micron2, poro_eff];
 
 % Open the file in append mode
 fid = fopen(data_file, 'a');
@@ -72,7 +72,7 @@ if fid == -1
 end
 
 % Format the data for writing
-formatSpec = '%f, %f, %f, %f\n';
+formatSpec = '%.10f, %d, %f, %f, %f\n';
 
 % Write the data to the file
 fprintf(fid, formatSpec, newData);
