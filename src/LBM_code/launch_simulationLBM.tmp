@@ -16,11 +16,11 @@
 
 seed=101;
 deltaP= 0.1 ; % pressure drop in Pa
-NX= 200.0
+NX= 100 ;
 poro= 0.9 ;
 mean_fiber_d= 12.5 ; % in microns
 std_d= 2.85 ; % in microns
-dx= .000001000  ; % grid size in m
+dx= 2e-6 ; % grid size in m
 results_folder = "../../results" ;
 filename = join([results_folder,"/fiber_mat_dx",num2str(dx),".tiff"],"") ;
 

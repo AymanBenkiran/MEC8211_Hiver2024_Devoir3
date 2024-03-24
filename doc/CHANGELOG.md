@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 - The LBM code was added to the project.
 
+- Add bash script for convergence analysis.
 
 
 
