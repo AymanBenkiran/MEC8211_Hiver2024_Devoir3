@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -ex
-# But: Ce script effectue lance les simulations necessaire pour
+# But: Ce script effectue les simulations necessaires pour
 #      effectuer une analyse de convergence en espace.
 #
 # Exemple: mon_premier_script repertoire1 repertoire2
