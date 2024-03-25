@@ -10,7 +10,14 @@ Amishga Alphonius, Ayman Benkiran, and Maxence Farin.
 
 This code validates a 2D LBM implementation used to model a filtering domains in HVAC systems.
 
-Ultimately, the goal of the current code is to estimate the model error $`\delta_{\mathrm{model}}`$ with a confidence interval of $`95.4 \%`$.
+Ultimately, the goal of the current code is to estimate the model error $`\delta_{\mathrm{model}}`$ with a confidence interval of $`95.4 \%`$:
+
+$`E - 2 u_\mathrm{val} \leq \delta_{\mathrm{model}} \leq E + 2 u_\mathrm{val}`$
+
+where 
+
+- $`E = \delta_{\mathrm{S}} - \delta_{\mathrm{D}}`$ is the simulation error with $`\delta_{\mathrm{S}}`$ the solution error and $`\delta_{\mathrm{D}}`$ the experimental error;
+- $`u_\mathrm{val} = \sqrt{u_\mathrm{num}^2 + u_\mathrm{input}^2 + u_\mathrm{D}^2}`$ is the global standard deviation obtained by propagation of numerical ($`\delta_{\mathrm{num}}`$), input ($`\delta_{\mathrm{input}}`$) and experimental ($`\delta_{\mathrm{D}}`$) errors.
 
 The LBM code evaluates the permeability ($`k`$) of the filtering domain by supposing a Gaussian distribution of filtering fiber diameters. The code also greatly simplifies the problem by assuming that all fiber are oriented in the same direction.
 
@@ -22,9 +29,9 @@ $`k = \frac{\mu U_\mathrm{i} \epsilon h}{\Delta P}`$
 
 where 
 
-- $`\mu`$ is the dynamic viscosity of the air flowing through the filter, 
-- $`U_\mathrm{i}`$ is the interstitial velocity of the air, 
-- $`h=\Delta x N_x`$ is the thickness of the filtering domain with $`\Delta x`$ is the spatial discretization and $`N_x`$ the number of elements along an axis,
+- $`\mu`$ is the dynamic viscosity of the air flowing through the filter;
+- $`U_\mathrm{i}`$ is the interstitial velocity of the air;
+- $`h=\Delta x N_x`$ is the thickness of the filtering domain with $`\Delta x`$ is the spatial discretization and $`N_x`$ the number of elements along an axis;
 - $`\Delta P`$ is the pressure drop through the filtering domain.
 
 # Code requirements and Running the code
