@@ -14,7 +14,7 @@ Ultimately, the goal of the current code is to estimate the model error $`\delta
 
 The LBM code evaluates the permeability ($`k`$) of the filtering domain by supposing a Gaussian distribution of filtering fiber diameters. The code also greatly simplifies the problem by assuming that all fiber are oriented in the same direction.
 
-Similarly, the porosity ($`\epsilon \in [0.90, 0.99]`$) is also assumed to follow a Gaussian distribution with $`\mu_{epsilon}=0.900`$ and $`\sigma_{epsilon}=7.50E-3`$. The mean ($`\mu_{epsilon}`$) and standard deviation ($`\sigma_{epsilon}`$) values are obtained from statistical treatment of experimental measurements. However, this distribution was not implemented to the code and therefore, has been added to it for error bound evaluations.
+Similarly, the porosity ($`\epsilon \in [0.90, 0.99]`$) is also assumed to follow a Gaussian distribution with $`\mu_{\epsilon}=0.900`$ and $`\sigma_{\epsilon}=7.50E-3`$. The mean ($`\mu_{\epsilon}`$) and standard deviation ($`\sigma_{\epsilon}`$) values are obtained from statistical treatment of experimental measurements. However, this distribution was not implemented to the code and therefore, has been added to it for error bound evaluations.
 
 Following Darcy's law, the filtering domain's permeability is estimated as:
 
