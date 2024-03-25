@@ -8,10 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Added
 
-- The LBM code was added to the project.
+- MINOR Add postprocessing for the spatial convergence analysis
 
-- Add bash script for convergence analysis.
+- MINOR Add bash script for spatial convergence analysis.
 
+- MAJOR The LBM code was added to the project.
 
 
 ## [Sample-Branch_name] - YYYY-MM-DD

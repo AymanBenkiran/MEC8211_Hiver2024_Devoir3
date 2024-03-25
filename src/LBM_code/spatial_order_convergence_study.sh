@@ -27,7 +27,7 @@ DATA_FOLDER="../../data/spatial_order_convergence_study"
 DATA_FILE="$DATA_FOLDER/spatial_order_convergence_study.csv"
 
 # For computing dx and NX values
-MULTIPLIERS=(1 1.5 2 2.5 3 4 6 8)
+MULTIPLIERS=(1 2 3 4 6 8)
 INITIAL_DX=0.000004000
 INITIAL_NX=50
 
@@ -52,9 +52,10 @@ else
 fi
 
 # Write header in data file
-echo "dx, NX, imposed_poro, k_in_micron2, effective_poro" > $DATA_FILE
+echo "dx,NX,imposed_poro,k_in_micron2,effective_poro" > $DATA_FILE
 echo "*****************************************************"
 
+# Loop over multiplier to generate cases
 for MULT in "${MULTIPLIERS[@]}"
 do
   # Compute current dx and NX values
@@ -78,3 +79,14 @@ do
   matlab -nodisplay -nodesktop -nosplash -noFigureWindows -r "try launch_simulationLBM(\"$RESULTS_FOLDER\",\"$DATA_FILE\"); catch; end; quit"
   echo "*****************************************************"
 done
+
+# Postprocess results
+echo "*****************************************************"
+echo " Postprocessing results"
+echo "*****************************************************"
+python3 ../postprocessing/spatial_order_convergence_postprocessing.py
+echo "*****************************************************"
+echo "*****************************************************"
+echo " Done! :D"
+echo "*****************************************************"
+echo "*****************************************************"
