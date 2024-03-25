@@ -28,8 +28,8 @@ permeability_truth=permeability[-1]
 
 # Evaluate GCI
 p_formel = 2
-r12 = dx_values[-1]/dx_values[-2]
-r23 = dx_values[-2]/dx_values[-3]
+r12 = dx_values[-2]/dx_values[-1]
+r23 = dx_values[-3]/dx_values[-2]
 p_hat = (np.log((r12**p_formel-1)*
                (permeability[-3]-permeability[-2])/
                (permeability[-2]-permeability[-1])
@@ -43,8 +43,8 @@ else:
     p = min(max(p_hat, 0.5), p_formel)
     GCI = 3/(r12**p-1)*abs(permeability[-1]-permeability[-2])
     print("p: ", p)
-    print("p_hat: ", p_hat)
 
+print("p_hat: ", p_hat)
 print("r12: ", r12)
 print("GCI: ", GCI)
 print("u_{val}: ", GCI/2)
