@@ -10,7 +10,7 @@ Amishga Alphonius, Ayman Benkiran, and Maxence Farin.
 
 This code validates a 2D LBM implementation used to model a filtering domains in HVAC systems.
 
-Ultimately, the goal of the current code is to estimate the model error $`\delta_{\mathrm{model}}`$ with a confidence interval of $`95.4%`$.
+Ultimately, the goal of the current code is to estimate the model error $`\delta_{\mathrm{model}}`$ with a confidence interval of $`95.4 \%`$.
 
 The LBM code evaluates the permeability ($`k`$) of the filtering domain by supposing a Gaussian distribution of filtering fiber diameters. The code also greatly simplifies the problem by assuming that all fiber are oriented in the same direction.
 
