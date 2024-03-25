@@ -42,3 +42,10 @@ xlabel('Valeurs');
 ylabel('Densité de probabilité');
 title('PDF de l''échantillon de données lognormale');
 legend('Données', 'PDF Lognormale');
+
+% On considère plutôt une approche plus smple, sans considérer explicitemnt la
+% distribution lognormale, donnant des données incohérantes
+u_manufacturier = 10;
+u_lognormale    = 14.7;
+u_Data = sqrt(u_manufacturier ^ 2 + u_lognormale ^ 2);
+fprintf('L''incertitude u_data par l''approche alternative est : [%0.4f] nu_m^2\n', u_Data);
