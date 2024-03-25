@@ -7,9 +7,11 @@ Date de creation du fichier : 24 mars 2024
 
 Usage : python3 spatial_order_convergence_postprocessing.py
 """
+
 #%% Importation des modules
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 results_folder = '../../results/spatial_order_convergence_study'
 data_folder = '../../data/spatial_order_convergence_study'
@@ -47,6 +49,13 @@ else:
 print("p_hat: ", p_hat)
 print("r12: ", r12)
 print("GCI: ", GCI)
-print("u_{val}: ", GCI/2)
+print("u_{num}: ", GCI/2)
 
 # ADD CONVERGENCE PLOT (RECOVER 2nd ORDER)
+error = [abs(k-permeability_truth) for k in permeability[:-1]]
+
+plt.figure()
+n = len(error)
+
+print("error: ", error)
+print("k: ", permeability)

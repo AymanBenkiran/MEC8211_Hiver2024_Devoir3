@@ -7,6 +7,7 @@ présente fournie par le manufacturier
 Auteur.e.s : Amishga Alphonius (2030051), Ayman Benkiran (1984509) et Maxence Farin (2310129)
 Date de creation du fichier : 24 mars 2024
 
+Usage : python3 Devoir3_u_Data.py
 """
 
 # Importation des modules
