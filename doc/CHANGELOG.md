@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changes
 
 - MAJOR Update script aiming to evaluate Data error related to experiment, with an alternative approach (Matlab)
+- MINOR Adding code for spatial convergence graph (Python)
 
 ## [main] - 2024-03-25
 
