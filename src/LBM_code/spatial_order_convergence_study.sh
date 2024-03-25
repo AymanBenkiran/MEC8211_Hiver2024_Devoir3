@@ -4,7 +4,7 @@
 #      effectuer une analyse de convergence en espace.
 #
 # Exemple: ./spatial_order_convergence_study.sh
-#
+# Ce fichier doit etre lance a partir du dossier LBM_code
 
 # messages
 #---------
@@ -26,7 +26,7 @@ RESULTS_FOLDER="../../results/spatial_order_convergence_study"
 DATA_FOLDER="../../data/spatial_order_convergence_study"
 DATA_FILE="$DATA_FOLDER/spatial_order_convergence_study.csv"
 
-# dx and NX values
+# For computing dx and NX values
 MULTIPLIERS=(1 1.5 2 2.5 3 4 6 8)
 INITIAL_DX=0.000004000
 INITIAL_NX=50
