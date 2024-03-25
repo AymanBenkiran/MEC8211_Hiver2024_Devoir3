@@ -40,7 +40,8 @@ This project uses a MATLAB code to solve the problem described above using the l
 
 - The spatial convergence analysis is run using a bash script (`src/LBM_code/spatial_order_convergence_study.sh`). It uses a Python script (`src/postprocessing/spatial_order_convergence_postprocessing.py`) to postprocess the results.
 
-- Other 
+- The input error analysis is run using a bash script (`src/LBM_code/input_error_study.sh`). It uses a Python script (`src/postprocessing/input_error_postprocessing.py`) to postprocess the results.
+
 
 To run all scripts of the code, the following Python modules are required:
     
@@ -59,10 +60,13 @@ All source and postprocessing files are located in the `src` folder.
     - `Generate_sample.m` generates the filtering domain sample.
     - `spatial_order_convergence_study.sh` is the bash script to run for the spatial convergence analysis and $`u_\mathrm{num}`$ evaluation.
     - `Devoir3_u_Data.m` is a simple script to evaluate Data error due to experiments, considering lognormal distribution and with a simple approach, allowing to obtain $`u_\mathrm{data}`$.
+    - `launch_simulationLBM_input.m` is the MATLAB script for input error analysis.
+    - `input_error_study.sh` is the bash script to run for the input error analysis and $`u_\mathrm{input}`$ evaluation.
   
 
 -  In `postprocessing` all Python scripts for results postprocessing is located:
     - `spatial_order_convergence_postprocessing.py` is the postprocessing script for the spatial convergence analysis and $`u_\mathrm{num}`$ evaluation.
+    - `input_error_postprocessing.py` is the postprocessing script for the input error analysis and $`u_\mathrm{input}`$ evaluation
 
 - Produced raw results are stored in `CSV` format in the `data` folder.
 - Postprocessed results (figures and data) are stored in the `results` folder.

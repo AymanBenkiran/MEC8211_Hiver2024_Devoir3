@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 - MINOR Add convergence plot to spatial convergence analysis postprocess script
 
+- MAJOR Add input error analysis bash script `input_error_study.sh`
+
 ### Changed
 
 - MINOR Update `readme.md`
