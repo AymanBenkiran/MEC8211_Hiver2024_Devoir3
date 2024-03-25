@@ -30,20 +30,20 @@ permeability_truth=permeability[-1]
 
 # Evaluate GCI
 p_formel = 2
-r12 = dx_values[-2]/dx_values[-1]
-r23 = dx_values[-3]/dx_values[-2]
+r12 = dx_values[1]/dx_values[2]
+r23 = dx_values[0]/dx_values[1]
 p_hat = (np.log((r12**p_formel-1)*
-               (permeability[-3]-permeability[-2])/
-               (permeability[-2]-permeability[-1])
+               (permeability[0]-permeability[1])/
+               (permeability[1]-permeability[2])
                + r12**p_formel)
          /np.log(r12*r23))
 p_rel = abs((p_hat-p_formel)/p_formel)
 
 if p_rel <= 0.1:
-    GCI = 1.25/(r12**p_formel-1)*abs(permeability[-1]-permeability[-2])
+    GCI = 1.25/(r12**p_formel-1)*abs(permeability[-1]-permeability[1])
 else:
     p = min(max(p_hat, 0.5), p_formel)
-    GCI = 3/(r12**p-1)*abs(permeability[-1]-permeability[-2])
+    GCI = 3/(r12**p-1)*abs(permeability[2]-permeability[1])
     print("p: ", p)
 
 print("p_hat: ", p_hat)
@@ -55,7 +55,18 @@ print("u_{num}: ", GCI/2)
 error = [abs(k-permeability_truth) for k in permeability[:-1]]
 
 plt.figure()
-n = len(error)
+plt.loglog(dx_values[:-1], [abs(permeability_i - permeability_truth) for permeability_i in permeability][:-1], "s-", label = "Norme 1")
+plt.loglog(dx_values[:-1], [abs(permeability_i - permeability_truth) ** 2 for permeability_i in permeability][:-1], "s-", label = "Norme 2")
 
+plt.xlabel(r"$\Delta X$ [m]")
+plt.ylabel(r"Erreur sur la Perméabilité [$\mu m^2$]")
+plt.title("Évolution de l'erreur spatiale selon la taille du maillage - Représentation Log-Log")
+plt.legend()
+plt.grid(True, linestyle = "--")
+plt.show()
+
+
+
+n = len(error)
 print("error: ", error)
 print("k: ", permeability)
