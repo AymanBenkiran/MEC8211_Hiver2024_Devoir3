@@ -58,6 +58,7 @@ All source and postprocessing files are located in the `src` folder.
     - `LBM.m` contains the LBM resolution.
     - `Generate_sample.m` generates the filtering domain sample.
     - `spatial_order_convergence_study.sh` is the bash script to run for the spatial convergence analysis and $`u_\mathrm{num}`$ evaluation.
+    - `Devoir3_u_Data.m' is a simple script to evaluate Data error due to experiments, considering lognormal distribution and with a simple approach, allowing to obtain $`u_\mathrm{data}`$.
   
 
 -  In `postprocessing` all Python scripts for results postprocessing is located:
