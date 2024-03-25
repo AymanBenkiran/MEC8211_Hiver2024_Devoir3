@@ -54,7 +54,16 @@ To run all scripts of the code, the following Python modules are required:
 - All source and postprocessing files are located in the `src` folder.
 
   -  In `LBM_code` all MATLAB scripts related to the LBM code is located:
+
+    - `launch_simulationLBM.m` is the MATLAB script for spatial convergence evaluation.
+    - `LBM.m` contains the LBM resolution.
+    - `Generate_sample.m` generates the filtering domain sample.
+    - `spatial_order_convergence_study.sh` is the bash script to run for the spatial convergence analysis and $`u_\mathrm{num}`$ evaluation.
   
+
+  -  In `postprocessing` all Python scripts for results postprocessing is located:
+    - `spatial_order_convergence_postprocessing.py` is the postprocessing script for the spatial convergence analysis and $`u_\mathrm{num}`$ evaluation.
+
 - Produced raw results are stored in `CSV` format in the `data` folder.
 - Postprocessed results (figures and data) are stored in the `results` folder.
 - A change log is available in the `doc` folder.
